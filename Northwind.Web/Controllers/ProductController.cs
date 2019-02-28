@@ -22,11 +22,19 @@ namespace Northwind.Web.Controllers
         {
             this.context = context;
             this.service = service;
+            if (service.pageSize == 0)
+            {
+                service.pageSize = context.Products.Count();
+            }
         }
         // GET: /<controller>/
         public async Task<IActionResult> Index(int? page)
         {
-            return View(await PaginatedList<Products>.CreateAsync(context.Products.AsNoTracking(), page ?? 1, service.pageSize));
+            return View(await PaginatedList<Products>
+                .CreateAsync(context.Products
+                .Include(product=>product.Category)
+                .Include(product => product.Supplier)
+                .AsNoTracking(), page ?? 1, service.pageSize));
         }
     }
 }

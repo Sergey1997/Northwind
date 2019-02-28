@@ -42,11 +42,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
-                </td>*@
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { categoryId = item.CategoryId }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Details", "Details", new { categoryId = item.CategoryId }, new { @class = "btn btn-info" })
+                    @*@Html.ActionLink("Delete", "Delete", new { categoryId = item.CategoryId })*@
+            </td>
         </tr>
     }
 

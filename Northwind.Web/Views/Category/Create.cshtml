@@ -1,0 +1,19 @@
+﻿@model Northwind.Web.Models.CreateCategoryViewModel;
+@{
+    ViewBag.Title = "Add category";
+}
+<form asp-action="Create" asp-controller="Users">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="CategoryName" class="control-label">CategoryName</label>
+        <input type="text" asp-for="CategoryName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Description</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+  
+    <div class="form-group">
+        <input type="submit" value="Добавить" class="btn btn-default" />
+    </div>
+</form>
