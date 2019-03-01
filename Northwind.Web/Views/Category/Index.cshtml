@@ -10,7 +10,7 @@
 <h2>Categories</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "Category", htmlAttributes: new { @class = "btn btn-success" })
 </p>
 @using (Html.BeginForm("Index", "Category", FormMethod.Get))
 {
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
+
                     @Html.ActionLink("Edit", "Edit", new { categoryId = item.CategoryId }, new { @class = "btn btn-warning" })
                     @Html.ActionLink("Details", "Details", new { categoryId = item.CategoryId }, new { @class = "btn btn-info" })
-                    @*@Html.ActionLink("Delete", "Delete", new { categoryId = item.CategoryId })*@
             </td>
         </tr>
     }

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Northwind.Web.Middleware
 {
-    public class PageNumberService
+    public class SettingService
     {
         public int pageSize;
-        public PageNumberService(IConfiguration config)
+        public SettingService(IConfiguration config)
         {
             pageSize = Int16.Parse(config.GetSection("section0:M").Value);
         }

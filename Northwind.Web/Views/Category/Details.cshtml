@@ -31,6 +31,6 @@
     </dl>
 </div>  
 <div>
-    @Html.ActionLink("Edit", "Edit", new { categoryId = Model.CategoryId }) |
-    @Html.ActionLink("Back to list", "Index") 
+    @Html.ActionLink("Edit", "Edit", new { categoryId = Model.CategoryId }, htmlAttributes: new { @class = "btn btn-warning" })
+    @Html.ActionLink("Back to list", "Index", "Category", htmlAttributes: new { @class = "btn btn-info" })
 </div>

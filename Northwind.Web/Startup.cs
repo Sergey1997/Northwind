@@ -30,7 +30,7 @@ namespace Northwind.Web
             string connection = "NorthwindConnection";
 
 
-            services.AddScoped<PageNumberService>();
+            services.AddScoped<SettingService>();
             services.AddDbContext<NorthwindContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString(connection)));
 

@@ -17,8 +17,8 @@ namespace Northwind.Web.Controllers
     public class CategoryController : Controller
     {
         protected readonly NorthwindContext context;
-        public PageNumberService service;
-        public CategoryController(NorthwindContext context, PageNumberService service)
+        protected SettingService service;
+        public CategoryController(NorthwindContext context, SettingService service)
         {
             this.context = context;
             this.service = service;

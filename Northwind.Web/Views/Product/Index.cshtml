@@ -8,7 +8,7 @@
 <h2>Products</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "Product", htmlAttributes: new { @class = "btn btn-success" })
 </p>
 @using (Html.BeginForm("Index", "Product", FormMethod.Get))
 {
@@ -16,9 +16,6 @@
 }
 <table class="table">
     <tr>
-        <th>
-            Product ID
-        </th>
         <th>
             Product Name
         </th>
@@ -50,9 +47,6 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
@@ -76,11 +70,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Discontinued)
             </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
-                </td>*@
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { productId = item.ProductId }, new { @class = "btn btn-warning" })
+                    @*@Html.ActionLink("Details", "Details", new { productId = item.ProductId }, new { @class = "btn btn-info" })*@
+                </td>
         </tr>
     }
 
