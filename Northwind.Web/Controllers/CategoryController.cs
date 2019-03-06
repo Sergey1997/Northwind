@@ -16,16 +16,17 @@ namespace Northwind.Web.Controllers
 
         protected readonly NorthwindContext _context;
         protected readonly ILogger _logger;
-        protected SettingService service;
+        protected SettingsConfiguration _config { get; }
 
-        public CategoryController(NorthwindContext context, SettingService service, ILoggerFactory logger)
+        public CategoryController(NorthwindContext context, SettingsConfiguration config, ILogger<CategoryController> logger)
         {
-            _logger = logger.CreateLogger<CategoryController>();
+            _logger = logger;
             _context = context;
-            this.service = service;
-            if(service.pageSize == 0)
+            _config = config;
+
+            if(_config.PageSize.M == 0)
             {
-                service.pageSize = context.Categories.Count();
+                _config.PageSize.M = context.Categories.Count();
             }
         }
 
@@ -35,7 +36,7 @@ namespace Northwind.Web.Controllers
 
             var categories = await PaginatedList<Categories>
                 .CreateAsync(_context.Categories
-                .AsNoTracking().OrderBy(category => category.CategoryId), page ?? 1, service.pageSize);
+                .AsNoTracking().OrderBy(category => category.CategoryId), page ?? 1, _config.PageSize.M);
 
             if(categories == null)
             {

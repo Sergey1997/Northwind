@@ -15,7 +15,7 @@ namespace Northwind.Web
         }
 
         public static IWebHostBuilder CreateWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().ConfigureLogging((context, logging) =>
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().ConfigureLogging(logging =>
             {
                 logging.ClearProviders();
             });

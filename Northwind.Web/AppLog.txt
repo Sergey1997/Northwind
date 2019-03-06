@@ -1,42 +1,15 @@
 Information
 Northwind.Web.Startup
-System.Collections.Generic.Dictionary`2+ValueCollection[System.String,System.Object]
-Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Information
-Northwind.Web.Startup
 Directory D:\DevFolder\Training\Northwind\Northwind.Web
 Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Warning
-Microsoft.EntityFrameworkCore.Query
-The Include operation for navigation '[product].Category' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
-Warning
-Microsoft.EntityFrameworkCore.Query
-The Include operation for navigation '[product].Supplier' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
-Warning
-Microsoft.EntityFrameworkCore.Query
-Query: '(from Products product in DbSet<Products> select [product]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
-Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Information
-Northwind.Web.Controllers.CategoryController
-Edit of categoryId 2 GET has been called
-Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Information
-Northwind.Web.Controllers.CategoryController
-Getting all categories on page (null)
-Error
 Northwind.Web.Startup
-Directory D:\DevFolder\Training\Northwind\Northwind.Web
-Error
+PageSize:5
+Information
 Northwind.Web.Startup
-System.Linq.Enumerable+SelectEnumerableIterator`2[System.String,Microsoft.Extensions.Configuration.IConfigurationSection]
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Warning
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;

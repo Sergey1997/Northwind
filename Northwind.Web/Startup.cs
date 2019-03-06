@@ -30,11 +30,12 @@ namespace Northwind.Web
         
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = "NorthwindConnection";
-           
-            services.AddScoped<SettingService>();
+            var config = new SettingsConfiguration();
+            Configuration.Bind("App", config);
+            services.AddSingleton(config);
+
             services.AddDbContext<NorthwindContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString(connection)));
+            options.UseSqlServer(config.ConnectionStrings.NorthwindConnection));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
@@ -44,12 +45,11 @@ namespace Northwind.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SettingsConfiguration config)
         {
-            ConfigureLogging(env, loggerFactory);
+            ConfigureLogging(env, loggerFactory, config);
             _logger = loggerFactory.CreateLogger<Startup>();
-            _logger.LogError("Directory " + env.ContentRootPath);
-            _logger.LogError(Configuration.GetChildren().ToString());
+            WriteAppSettings(env, _logger, config);
 
             if (env.IsDevelopment())
             {
@@ -73,17 +73,17 @@ namespace Northwind.Web
             });
         }
 
-        private void ConfigureLogging(IHostingEnvironment env, ILoggerFactory loggerFactory)
+        private void ConfigureLogging(IHostingEnvironment env, ILoggerFactory loggerFactory, SettingsConfiguration config)
         {
-            var logConfig = Configuration.GetSection("Logging");
-
-            var fileConfig = logConfig.GetSection("File");
-
-            var path = fileConfig.GetValue<string>("path");
-            var logLevel = Enum.Parse<LogLevel>(fileConfig.GetValue<string>("Loglevel"));
-
-            loggerFactory.AddFile(path, logLevel);
-
+            loggerFactory.AddFile(config.Logging.Path, config.Logging.LogLevel);
+        }
+        private void WriteAppSettings(IHostingEnvironment env, ILogger _logger,SettingsConfiguration config)
+        {
+            _logger.LogInformation("Directory " + env.ContentRootPath);
+            _logger.LogInformation("PageSize:" + config.PageSize.M);
+            _logger.LogInformation("Path to log:" + config.Logging.Path);
+            _logger.LogInformation("LogLevel:" + config.Logging.LogLevel);
+            _logger.LogInformation("NorthwindConnectionString:" + config.ConnectionStrings.NorthwindConnection);
         }
     }
 }
