@@ -1,46 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Northwind.DataAccess.Context;
 using Northwind.DataAccess.Models;
 using Northwind.Web.Helpers;
-using Northwind.Web.Middleware;
+using Northwind.Web.Configuration;
 using Northwind.Web.Models;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Northwind.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        protected readonly NorthwindContext context;
-        protected SettingService service;
-        public CategoryController(NorthwindContext context, SettingService service)
+
+        protected readonly NorthwindContext _context;
+        protected readonly ILogger _logger;
+        protected SettingsConfiguration _config { get; }
+
+        public CategoryController(NorthwindContext context, SettingsConfiguration config, ILogger<CategoryController> logger)
         {
-            this.context = context;
-            this.service = service;
-            if(service.pageSize == 0)
+            _logger = logger;
+            _context = context;
+            _config = config;
+
+            if(_config.PageSize.M == 0)
             {
-                service.pageSize = context.Categories.Count();
+                _config.PageSize.M = context.Categories.Count();
             }
         }
-        // GET: /<controller>/
+
         public async Task<IActionResult> Index(int? page)
         {
-            return View(await PaginatedList<Categories>
-                .CreateAsync(context.Categories
-                .AsNoTracking(), page ?? 1, service.pageSize));
+            _logger.LogInformation("Getting all categories on page {page}", page);
+
+            var categories = await PaginatedList<Categories>
+                .CreateAsync(_context.Categories
+                .AsNoTracking().OrderBy(category => category.CategoryId), page ?? 1, _config.PageSize.M);
+
+            if(categories == null)
+            {
+                _logger.LogError("Index ({page}) not found", page);
+                return NotFound();
+            }
+
+            return View(categories);
         }
         public IActionResult Details(int? categoryId)
         {
-            var model = context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
+            _logger.LogInformation("Details of categoryId {categoryId} has been called", categoryId);
+            var model = _context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
 
             if (model == null)
             {
-                return RedirectToAction("Index");
+                _logger.LogError("Details of categoryId ({categoryId}) not found", categoryId);
+                return NotFound();
             }
 
             return View(model);
@@ -49,13 +63,15 @@ namespace Northwind.Web.Controllers
         [HttpGet]
         public IActionResult Edit(int categoryId)
         {
-
-            var model = context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
+            _logger.LogInformation("Edit of categoryId {categoryId} GET has been called", categoryId);
+            var model = _context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
 
             if (model == null)
             {
-                return RedirectToAction("Index");
+                _logger.LogError("Edit of categoryId({categoryId}) GET NOT FOUND", categoryId);
+                return NotFound();
             }
+
             EditCategoryViewModel viewModel = new EditCategoryViewModel {
                 CategoryId = model.CategoryId,
                 CategoryName = model.CategoryName,
@@ -67,18 +83,21 @@ namespace Northwind.Web.Controllers
         [HttpPost]
         public ActionResult Edit(EditCategoryViewModel viewModel)
         {
+            _logger.LogInformation("Edit of caregory {viewModel.CategoryId} POST has been called", viewModel.CategoryId);
             if (ModelState.IsValid)
             {
-
-                var model = context.Categories.SingleOrDefault(category => category.CategoryId == viewModel.CategoryId);
+                var model = _context.Categories.SingleOrDefault(category => category.CategoryId == viewModel.CategoryId);
                 if (model != null)
                 {
                     model.CategoryName = viewModel.CategoryName;
                     model.Description = viewModel.Description;
-                    context.SaveChanges();
+                    _context.SaveChanges();
+                    _logger.LogInformation("Category of {model.CategoryId} edited", model.CategoryId);
+
                     return RedirectToAction("Index");
                 }
             }
+            _logger.LogError("Edit of category {viewModel.CategoryId} failed, model isn't valid", viewModel.CategoryId);
             return View(viewModel);
         }
         [HttpGet]
@@ -87,14 +106,16 @@ namespace Northwind.Web.Controllers
         [HttpPost]
         public IActionResult Create(CreateCategoryViewModel model)
         {
+            _logger.LogInformation("Create post has been called");
             if (ModelState.IsValid)
             {
                 Categories category = new Categories { CategoryName = model.CategoryName, Description = model.Description };
-                context.Categories.Add(category);
-                context.SaveChanges();
+                _context.Categories.Add(category);
+                _context.SaveChanges();
+                _logger.LogInformation("Create category {category.CategoryId} successfully completed", category.CategoryId);
                 return RedirectToAction("Index");
-
             }
+            _logger.LogError("Create of {model.CategoryName} failed, model isn't valid", model.CategoryName);
             return View(model);
         }
     }

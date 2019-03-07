@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Northwind.DataAccess.Context;
 using Northwind.DataAccess.Models;
 using Northwind.Web.Helpers;
-using Northwind.Web.Middleware;
+using Northwind.Web.Configuration;
 using Northwind.Web.Models;
 
 
@@ -19,15 +19,14 @@ namespace Northwind.Web.Controllers
     public class ProductController : Controller
     {
         protected readonly NorthwindContext context;
-        public SettingService service;
-        public ProductController(NorthwindContext context, SettingService service)
+        public ProductController(NorthwindContext context)
         {
             this.context = context;
-            this.service = service;
-            if (service.pageSize == 0)
-            {
-                service.pageSize = context.Products.Count();
-            }
+            //this.service = service;
+            //if (service.pageSize == 0)
+            //{
+            //    service.pageSize = context.Products.Count();
+            //}
         }
         // GET: /<controller>/
         public async Task<IActionResult> Index(int? page)
@@ -36,7 +35,7 @@ namespace Northwind.Web.Controllers
                 .CreateAsync(context.Products
                 .Include(product=>product.Category)
                 .Include(product => product.Supplier)
-                .AsNoTracking(), page ?? 1, service.pageSize));
+                .AsNoTracking(), page ?? 1, 5));
         }
         public IActionResult Details(int? productId)
         {
