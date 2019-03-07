@@ -9,7 +9,43 @@ Northwind.Web.Startup
 Path to log:AppLog.txt
 Information
 Northwind.Web.Startup
-LogLevel:Warning
+LogLevel:Information
 Information
 Northwind.Web.Startup
 NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Microsoft.AspNetCore.Hosting.Internal.WebHost
+Request starting HTTP/1.1 GET http://localhost:44342/  
+Information
+Microsoft.AspNetCore.Hosting.Internal.WebHost
+Request starting HTTP/1.1 DEBUG http://localhost:58091/  0
+Information
+Microsoft.AspNetCore.Hosting.Internal.WebHost
+Request finished in 37.6329ms 200 
+Information
+Microsoft.AspNetCore.Routing.EndpointMiddleware
+Executing endpoint 'Northwind.Web.Controllers.HomeController.Index (Northwind.Web)'
+Information
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
+Route matched with {action = "Index", controller = "Home"}. Executing action Northwind.Web.Controllers.HomeController.Index (Northwind.Web)
+Information
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
+Executing action method Northwind.Web.Controllers.HomeController.Index (Northwind.Web) - Validation state: Valid
+Information
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
+Executed action method Northwind.Web.Controllers.HomeController.Index (Northwind.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7093ms.
+Information
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor
+Executing ViewResult, running view Index.
+Information
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor
+Executed ViewResult - view Index executed in 184.4926ms.
+Information
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
+Executed action Northwind.Web.Controllers.HomeController.Index (Northwind.Web) in 213.7747ms
+Information
+Microsoft.AspNetCore.Routing.EndpointMiddleware
+Executed endpoint 'Northwind.Web.Controllers.HomeController.Index (Northwind.Web)'
+Information
+Microsoft.AspNetCore.Hosting.Internal.WebHost
+Request finished in 328.8353ms 200 text/html; charset=utf-8

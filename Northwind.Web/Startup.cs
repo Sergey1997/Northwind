@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Northwind.DataAccess.Context;
 using Northwind.Web.Logging;
-using Northwind.Web.Middleware;
+using Northwind.Web.Configuration;
 
 namespace Northwind.Web
 {
@@ -47,7 +47,7 @@ namespace Northwind.Web
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SettingsConfiguration config)
         {
-            ConfigureLogging(env, loggerFactory, config);
+            ConfigureLogging(loggerFactory, config);
             _logger = loggerFactory.CreateLogger<Startup>();
             WriteAppSettings(env, _logger, config);
 
@@ -65,6 +65,8 @@ namespace Northwind.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -73,11 +75,11 @@ namespace Northwind.Web
             });
         }
 
-        private void ConfigureLogging(IHostingEnvironment env, ILoggerFactory loggerFactory, SettingsConfiguration config)
+        private void ConfigureLogging(ILoggerFactory loggerFactory, SettingsConfiguration config)
         {
             loggerFactory.AddFile(config.Logging.Path, config.Logging.LogLevel);
         }
-        private void WriteAppSettings(IHostingEnvironment env, ILogger _logger,SettingsConfiguration config)
+        private void WriteAppSettings(IHostingEnvironment env, ILogger _logger, SettingsConfiguration config)
         {
             _logger.LogInformation("Directory " + env.ContentRootPath);
             _logger.LogInformation("PageSize:" + config.PageSize.M);

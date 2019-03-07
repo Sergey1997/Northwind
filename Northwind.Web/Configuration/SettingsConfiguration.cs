@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Northwind.Web.Middleware
+namespace Northwind.Web.Configuration
 {
-    public class SettingsConfiguration
+    public class SettingsConfiguration 
     {
         public LoggingConfiguration Logging { get; set; } = new LoggingConfiguration();
         public PageSizeConfiguration PageSize { get; set; } = new PageSizeConfiguration();

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Northwind.DataAccess.Context;
 using Northwind.DataAccess.Models;
 using Northwind.Web.Helpers;
-using Northwind.Web.Middleware;
+using Northwind.Web.Configuration;
 using Northwind.Web.Models;
 
 
