@@ -12,12 +12,16 @@ namespace Northwind.Web.Models
     {
         public int ProductId { get; set; }
         [Required(ErrorMessage = "Enter Product Name")]
-        [Display(Name = "Product Name")]
+        [Display(Name = "Name of product")]
         [StringLength(40)]
         public string ProductName { get; set; }
+        [Required(ErrorMessage = "Enter Supplier Name")]
+        [Display(Name = "Name of supplier")]
         public int? SupplierId { get; set; }
+        [Required(ErrorMessage = "Enter Category Name")]
+        [Display(Name = "Name of category")]
         public int? CategoryId { get; set; }
-        [Required(ErrorMessage = "Enter Discontinued")]
+        [Required(ErrorMessage = "Enter Discontinued status")]
         [Display(Name = "Discontinued")]
         public bool Discontinued { get; set; }
     }

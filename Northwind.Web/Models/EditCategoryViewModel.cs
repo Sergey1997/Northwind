@@ -9,13 +9,13 @@ namespace Northwind.Web.Models
     public class EditCategoryViewModel
     {
         public int CategoryId { get; set; }
-        [Required(ErrorMessage = "Enter Category Name")]
-        [Display(Name = "Category Name")]
-        [StringLength(30)]
+        [Required(ErrorMessage = "Enter Description")]
+        [Display(Description = "Category of name")]
+        [StringLength(15)]
         public string CategoryName { get; set; }
         [Required(ErrorMessage = "Enter Description")]
-        [Display(Name = "Description")]
-        [StringLength(100)]
+        [Display(Description = "Description")]
+        [StringLength(150)]
         public string Description { get; set; }
     }
 }

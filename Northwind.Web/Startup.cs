@@ -15,12 +15,12 @@ using Microsoft.Extensions.Logging;
 using Northwind.DataAccess.Context;
 using Northwind.Web.Logging;
 using Northwind.Web.Configuration;
+using Northwind.Web.Middleware;
 
 namespace Northwind.Web
 {
     public class Startup
     {
-        protected ILogger _logger;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -45,11 +45,13 @@ namespace Northwind.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SettingsConfiguration config)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory, 
+            SettingsConfiguration config)
         {
             ConfigureLogging(loggerFactory, config);
-            _logger = loggerFactory.CreateLogger<Startup>();
-            WriteAppSettings(env, _logger, config);
+            WriteAppSettings(env, loggerFactory.CreateLogger<Startup>(), config);
 
             if (env.IsDevelopment())
             {
@@ -65,7 +67,7 @@ namespace Northwind.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
+            app.ConfigureExceptionHandler(loggerFactory.CreateLogger<Startup>());
 
             app.UseMvc(routes =>
             {
@@ -77,9 +79,10 @@ namespace Northwind.Web
 
         private void ConfigureLogging(ILoggerFactory loggerFactory, SettingsConfiguration config)
         {
-            loggerFactory.AddFile(config.Logging.Path, config.Logging.LogLevel);
+            loggerFactory.AddFileLogger(config.Logging.Path, config.Logging.LogLevel);
         }
-        private void WriteAppSettings(IHostingEnvironment env, ILogger _logger, SettingsConfiguration config)
+            
+        private void WriteAppSettings(IHostingEnvironment env, ILogger<Startup> _logger, SettingsConfiguration config)
         {
             _logger.LogInformation("Directory " + env.ContentRootPath);
             _logger.LogInformation("PageSize:" + config.PageSize.M);

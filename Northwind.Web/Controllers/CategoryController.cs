@@ -8,6 +8,7 @@ using Northwind.DataAccess.Models;
 using Northwind.Web.Helpers;
 using Northwind.Web.Configuration;
 using Northwind.Web.Models;
+using System;
 
 namespace Northwind.Web.Controllers
 {
@@ -40,24 +41,24 @@ namespace Northwind.Web.Controllers
 
             if(categories == null)
             {
-                _logger.LogError("Index ({page}) not found", page);
-                return NotFound();
+                throw new Exception("Exception while fetching all the categories from the storage.");
             }
 
             return View(categories);
         }
         public IActionResult Details(int? categoryId)
         {
-            _logger.LogInformation("Details of categoryId {categoryId} has been called", categoryId);
-            var model = _context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
+                _logger.LogInformation("Details of categoryId {categoryId} has been called", categoryId);
 
-            if (model == null)
-            {
-                _logger.LogError("Details of categoryId ({categoryId}) not found", categoryId);
-                return NotFound();
-            }
+                var model = _context.Categories.SingleOrDefault(category => category.CategoryId == categoryId);
 
-            return View(model);
+                if (model == null)
+                {
+                    throw new ArgumentNullException("Model " + model.ToString() +" unable to be a null");
+                }
+
+                return View(model);
+            
         }
 
         [HttpGet]
@@ -68,8 +69,7 @@ namespace Northwind.Web.Controllers
 
             if (model == null)
             {
-                _logger.LogError("Edit of categoryId({categoryId}) GET NOT FOUND", categoryId);
-                return NotFound();
+                throw new ArgumentNullException("Model " + model.ToString() + " unable to be a null");
             }
 
             EditCategoryViewModel viewModel = new EditCategoryViewModel {
@@ -97,6 +97,7 @@ namespace Northwind.Web.Controllers
                     return RedirectToAction("Index");
                 }
             }
+            
             _logger.LogError("Edit of category {viewModel.CategoryId} failed, model isn't valid", viewModel.CategoryId);
             return View(viewModel);
         }

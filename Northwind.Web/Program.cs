@@ -18,6 +18,8 @@ namespace Northwind.Web
             WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().ConfigureLogging(logging =>
             {
                 logging.ClearProviders();
+                logging.AddFilter("System", LogLevel.Critical);
+                logging.AddFilter("Microsoft", LogLevel.Critical);
             });
     }
 }

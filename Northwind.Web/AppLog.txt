@@ -1,6 +1,6 @@
 Information
 Northwind.Web.Startup
-Directory D:\DevFolder\Training\Northwind\Northwind.Web
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
 Information
 Northwind.Web.Startup
 PageSize:5
@@ -14,38 +14,448 @@ Information
 Northwind.Web.Startup
 NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
 Information
-Microsoft.AspNetCore.Hosting.Internal.WebHost
-Request starting HTTP/1.1 GET http://localhost:44342/  
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
 Information
-Microsoft.AspNetCore.Hosting.Internal.WebHost
-Request starting HTTP/1.1 DEBUG http://localhost:58091/  0
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 1 has been called
 Information
-Microsoft.AspNetCore.Hosting.Internal.WebHost
-Request finished in 37.6329ms 200 
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 132141243 has been called
+Error
+Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware
+An unhandled exception has occurred while executing the request.
+Error
+Northwind.Web.Startup
+Something went wrong: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Northwind.Web.Controllers.CategoryController.Details(Nullable`1 categoryId) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\CategoryController.cs:line 57
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
 Information
-Microsoft.AspNetCore.Routing.EndpointMiddleware
-Executing endpoint 'Northwind.Web.Controllers.HomeController.Index (Northwind.Web)'
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
 Information
-Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
-Route matched with {action = "Index", controller = "Home"}. Executing action Northwind.Web.Controllers.HomeController.Index (Northwind.Web)
+Northwind.Web.Startup
+PageSize:5
 Information
-Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
-Executing action method Northwind.Web.Controllers.HomeController.Index (Northwind.Web) - Validation state: Valid
+Northwind.Web.Startup
+Path to log:AppLog.txt
 Information
-Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
-Executed action method Northwind.Web.Controllers.HomeController.Index (Northwind.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7093ms.
+Northwind.Web.Startup
+LogLevel:Information
 Information
-Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor
-Executing ViewResult, running view Index.
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
 Information
-Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor
-Executed ViewResult - view Index executed in 184.4926ms.
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
 Information
-Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker
-Executed action Northwind.Web.Controllers.HomeController.Index (Northwind.Web) in 213.7747ms
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 1 has been called
 Information
-Microsoft.AspNetCore.Routing.EndpointMiddleware
-Executed endpoint 'Northwind.Web.Controllers.HomeController.Index (Northwind.Web)'
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 112342134 has been called
+Error
+Northwind.Web.Startup
+Something went wrong: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Northwind.Web.Controllers.CategoryController.Details(Nullable`1 categoryId) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\CategoryController.cs:line 57
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 
 Information
-Microsoft.AspNetCore.Hosting.Internal.WebHost
-Request finished in 328.8353ms 200 text/html; charset=utf-8
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Create post has been called
+Error
+Northwind.Web.Startup
+Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Northwind.Web.Controllers.CategoryController.Create(CreateCategoryViewModel model) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\CategoryController.cs:line 115
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 
+Information
+Northwind.Web.Controllers.CategoryController
+Create post has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Create category 11 successfully completed
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page 2
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page 1
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page 2
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Error
+Northwind.Web.Startup
+Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Northwind.Web.Controllers.ProductController.Edit(EditProductViewModel viewModel) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\ProductController.cs:line 98
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 
+Error
+Northwind.Web.Startup
+Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Northwind.Web.Controllers.ProductController.Edit(EditProductViewModel viewModel) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\ProductController.cs:line 98
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 1 has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Edit of categoryId 1 GET has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Edit of caregory 1 POST has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Category of 1 edited
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Edit of categoryId 1 GET has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Edit of caregory 1 POST has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Category of 1 edited
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page 2
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page 1
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 1 has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 32141324 has been called
+Error
+Northwind.Web.Startup
+Something went wrong: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Northwind.Web.Controllers.CategoryController.Details(Nullable`1 categoryId) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\CategoryController.cs:line 57
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 
+Information
+Northwind.Web.Startup
+Directory D:\Тренинг.NET\Northwind\Northwind.Web
+Information
+Northwind.Web.Startup
+PageSize:5
+Information
+Northwind.Web.Startup
+Path to log:AppLog.txt
+Information
+Northwind.Web.Startup
+LogLevel:Information
+Information
+Northwind.Web.Startup
+NorthwindConnectionString:Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=True;
+Information
+Northwind.Web.Controllers.CategoryController
+Getting all categories on page (null)
+Information
+Northwind.Web.Controllers.CategoryController
+Details of categoryId 1 has been called
+Information
+Northwind.Web.Controllers.CategoryController
+Details of categoryId (null) has been called
+Error
+Northwind.Web.Startup
+Something went wrong: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Northwind.Web.Controllers.CategoryController.Details(Nullable`1 categoryId) in D:\Тренинг.NET\Northwind\Northwind.Web\Controllers\CategoryController.cs:line 57
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context) 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Northwind.DataAccess.Models
 {
@@ -19,6 +20,7 @@ namespace Northwind.DataAccess.Models
         public short? UnitsInStock { get; set; }
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
+
         public bool Discontinued { get; set; }
 
         public virtual Categories Category { get; set; }

@@ -8,9 +8,8 @@ namespace Northwind.Web.Models
 {
     public class CreateProductViewModel
     {
-        [Required(ErrorMessage = "Enter Product Name")]
         [Display(Name = "Product Name")]
-        [StringLength(40)]
+        [StringLength(70)]
         public string ProductName { get; set; }
         [Required(ErrorMessage = "Enter Supplier")]
         public int? SupplierId { get; set; }
