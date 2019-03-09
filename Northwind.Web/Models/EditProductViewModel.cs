@@ -13,6 +13,7 @@ namespace Northwind.Web.Models
         public int ProductId { get; set; }
         [Required(ErrorMessage = "Enter Product Name")]
         [Display(Name = "Name of product")]
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         [StringLength(40)]
         public string ProductName { get; set; }
         [Required(ErrorMessage = "Enter Supplier Name")]

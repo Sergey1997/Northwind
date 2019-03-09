@@ -15,7 +15,7 @@ namespace Northwind.Web.Models
         public string CategoryName { get; set; }
         [Required(ErrorMessage = "Enter Description")]
         [Display(Description = "Description")]
-        [StringLength(150)]
+        [StringLength(100)]
         public string Description { get; set; }
     }
 }

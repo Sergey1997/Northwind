@@ -9,10 +9,10 @@ namespace Northwind.Web.Models
     public class CreateCategoryViewModel
     {
         [Required(ErrorMessage = "Enter Category Name")]
-        [StringLength(50)]
+        [StringLength(15)]
         public string CategoryName { get; set; }
         [Required(ErrorMessage = "Enter Description")]
-        [StringLength(150)]
+        [StringLength(100)]
         public string Description { get; set; }
     }
 }

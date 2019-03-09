@@ -41,7 +41,7 @@ namespace Northwind.Web.Controllers
 
             if(categories == null)
             {
-                throw new Exception("Exception while fetching all the categories from the storage.");
+                throw new NullReferenceException("Exception while fetching all the categories from the storage.");
             }
 
             return View(categories);
@@ -54,7 +54,7 @@ namespace Northwind.Web.Controllers
 
                 if (model == null)
                 {
-                    throw new ArgumentNullException("Model " + model.ToString() +" unable to be a null");
+                    throw new NullReferenceException("Model " + model.ToString() +" unable to be a null");
                 }
 
                 return View(model);
@@ -69,7 +69,7 @@ namespace Northwind.Web.Controllers
 
             if (model == null)
             {
-                throw new ArgumentNullException("Model " + model.ToString() + " unable to be a null");
+                throw new NullReferenceException("Model " + model.ToString() + " unable to be a null");
             }
 
             EditCategoryViewModel viewModel = new EditCategoryViewModel {
@@ -83,23 +83,21 @@ namespace Northwind.Web.Controllers
         [HttpPost]
         public ActionResult Edit(EditCategoryViewModel viewModel)
         {
-            _logger.LogInformation("Edit of caregory {viewModel.CategoryId} POST has been called", viewModel.CategoryId);
-            if (ModelState.IsValid)
-            {
-                var model = _context.Categories.SingleOrDefault(category => category.CategoryId == viewModel.CategoryId);
-                if (model != null)
-                {
-                    model.CategoryName = viewModel.CategoryName;
-                    model.Description = viewModel.Description;
-                    _context.SaveChanges();
-                    _logger.LogInformation("Category of {model.CategoryId} edited", model.CategoryId);
+            _logger.LogInformation("Editing of category {viewModel.CategoryId} has been called", viewModel.CategoryId);
 
-                    return RedirectToAction("Index");
-                }
+            var model = _context.Categories.SingleOrDefault(category => category.CategoryId == viewModel.CategoryId);
+
+            if (model == null)
+            {
+                throw new NullReferenceException("Edit of category {viewModel.CategoryId} failed, model isn't valid");
             }
-            
-            _logger.LogError("Edit of category {viewModel.CategoryId} failed, model isn't valid", viewModel.CategoryId);
-            return View(viewModel);
+
+            model.CategoryName = viewModel.CategoryName;
+            model.Description = viewModel.Description;
+            _context.SaveChanges();
+            _logger.LogInformation("Category of {model.CategoryId} edited", model.CategoryId);
+
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult Create() => View();
@@ -108,16 +106,20 @@ namespace Northwind.Web.Controllers
         public IActionResult Create(CreateCategoryViewModel model)
         {
             _logger.LogInformation("Create post has been called");
-            if (ModelState.IsValid)
+
+            Categories category = new Categories { CategoryName = model.CategoryName, Description = model.Description };
+
+            if(category == null)
             {
-                Categories category = new Categories { CategoryName = model.CategoryName, Description = model.Description };
-                _context.Categories.Add(category);
-                _context.SaveChanges();
-                _logger.LogInformation("Create category {category.CategoryId} successfully completed", category.CategoryId);
-                return RedirectToAction("Index");
+                throw new NullReferenceException("Create of {model} failed, reference are null");
             }
-            _logger.LogError("Create of {model.CategoryName} failed, model isn't valid", model.CategoryName);
-            return View(model);
+
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+
+            _logger.LogInformation("Create category {category.CategoryId} successfully completed", category.CategoryId);
+
+            return RedirectToAction("Index");
         }
     }
 }
